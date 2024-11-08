@@ -1,0 +1,22 @@
+{
+  "name": "gmchighschoolserver",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "gmc",
+    "high",
+    "school",
+    "server"
+  ],
+  "author": "Taiwo Monsuru",
+  "license": "ISC",
+  "description": "gmc high school server",
+  "dependencies": {
+    "express": "^4.21.1",
+    "mongoose": "^8.8.0"
+  }
+}
