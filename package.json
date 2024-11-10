@@ -17,6 +17,6 @@
   "description": "gmc high school server",
   "dependencies": {
     "express": "^4.21.1",
-    "mongoose": "^8.8.0"
+    "mongoose": "^8.8.1"
   }
 }
