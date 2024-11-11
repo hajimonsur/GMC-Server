@@ -114,4 +114,18 @@ router.delete("/delete-student/:id", async (req, res) => {
 });
 
 
+// get all approved students
+router.get("/all-approved-students", async (req, res) => {
+    try {
+        const students = await Student.find({ isStudent: true });
+        res.status(200).json({
+            success: true,
+            data: students
+        });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+
+
 module.exports = router;
