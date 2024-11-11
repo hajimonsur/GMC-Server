@@ -77,4 +77,41 @@ router.patch("/approve-student/:id", async (req, res) => {
 });
 
 
+//Maye Dave
+// update student information
+router.put("/update-student/:id", async (req, res) => {
+    try {
+        const student = await Student.findById(req.params.id);
+        student.firstName = req.body.firstName;
+        student.lastName = req.body.lastName;
+        student.email = req.body.email;
+        student.address = req.body.address;
+        student.dob = req.body.dob;
+        student.gender = req.body.gender;
+        await student.save();
+        res.status(200).json({
+            success: true,
+            data: student,
+            message: "Student updated successfully"
+        });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+
+// delete student information
+router.delete("/delete-student/:id", async (req, res) => {
+    try {
+        const student = await Student.findByIdAndDelete(req.params.id);
+        res.status(200).json({
+            success: true,
+            data: student,
+            message: "Student deleted successfully"
+        });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+
+
 module.exports = router;
